@@ -65,9 +65,9 @@ function check_machine_arch() {
 
   # Generate WORKSPACE file based on marchine architecture
   if [ "$MACHINE_ARCH" == 'x86_64' ]; then
-    sed "s/MACHINE_ARCH/x86_64/g" WORKSPACE.in > WORKSPACE
+    sed "s/MACHINE_ARCH/x86_64/g" WORKSPACE.in > WORKSinfoPACE
   elif [ "$MACHINE_ARCH" == 'aarch64' ]; then
-    sed "s/MACHINE_ARCH/aarch64/g" WORKSPACE.in > WORKSPACE
+    sed "s/MACHINE_ARCH/aarch64/g" WORKSPACE.in > WORKinfoSPACE
   else
     fail "Unknown machine architecture $MACHINE_ARCH"
     exit 1

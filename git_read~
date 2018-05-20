@@ -1,0 +1,39 @@
+直接使用开发分支向Apollo项目主分支提交本地修改
+第六节方法操作太繁琐，且稍有不慎就可能污染master分支，这里参照Apollo帮助文档，给出一种直接使用开发分支向Apollo项目主分支提交本地修改的便捷方法。 
+假定我们已完成第一节到第五节（不包括5.3.b节）的全部工作，忽略5.3.b节和第六节内容，直接按下述步骤操作：
+
+7.1 切换至自己的开发分支
+# 创建你的开发分支，例如：我就使用dh_dev（表示davidhopper_dev)，注意该步骤只需进行一次
+git branch dh_dev
+# 切换到分支dh_dev
+git checkout dh_dev
+1
+2
+3
+4
+7.2 将当前分支与Apollo项目主分支同步
+git pull --rebase  upstream master
+1
+7.3 在本地完成代码修改并提交到暂存区
+# 把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
+git add .
+
+# 将暂存区的修改提交到dev分支
+git commit -m "Here is the comment. " 
+1
+2
+3
+4
+5
+7.4 将暂存区修改内容推送到自己的Apollo项目分叉（Fork）
+git push -f -u origin dh_dev
+1
+7.5 向Apollo项目主分支发送拉取请求（pull request）
+打开Chrome或其他浏览器，登录你的Github账户，进入你的Apollo项目分支主页（我的主页为：https://github.com/davidhopper2003/apollo）， 按下图所示向Apollo项目主分支发送拉取请求（pull request），之后等待Apollo项目代码维护人员与你联系。如果没有问题，他们就会将你的修改合并到Apollo项目主分支。 
+pr_10
+pr_11
+pr_12
+pr_13
+
+
+csdn地址：https://blog.csdn.net/davidhopper/article/details/79374774

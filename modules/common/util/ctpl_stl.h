@@ -188,6 +188,7 @@ class ThreadPool {
     flags_.clear();
   }
 
+  //auto    ->是一种返回值占位的表示方法
   template <typename F, typename... Rest>
   auto Push(F &&f, Rest &&... rest) -> std::future<decltype(f(0, rest...))> {
     auto pck =
